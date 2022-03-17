@@ -1,0 +1,2 @@
+Prefix plugins/CompositionalPlots/example
+Plugin CompositionalPlots inputfile parameters.composition.txt outputfile Composition
