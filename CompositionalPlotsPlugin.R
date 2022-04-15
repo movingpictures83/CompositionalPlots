@@ -26,6 +26,7 @@ input <- function(inputfile) {
    otu.path <<- paste(pfix, toString(parameters["otufile", 2]), sep="")
    tree.path <<- paste(pfix, toString(parameters["tree", 2]), sep="")
    map.path <<- paste(pfix, toString(parameters["mapping", 2]), sep="")
+   column <<- toString(parameters["column", 2])
 pseq2 <<- read_csv2phyloseq(otu.file=otu.path, taxonomy.file=tree.path, metadata.file=map.path, sep=",")
 #pseq2 = read_csv2phyloseq(otu.file="asv.tab.norm.csv", taxonomy.file="asv.taxonomy.quoted.padded.csv", metadata.file="../sample_data.csv", sep=",")
 }
@@ -41,7 +42,7 @@ output <- function(outputfile) {
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Kingdom", top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Kingdom",
-                      sample.sort = "Description",
+                      sample.sort = column,
                       x.label = "Samples") +
   labs(x = "Samples", y = "Relative abundance (%)",
        title = "Relative abundance data") +
@@ -53,7 +54,7 @@ print(p)
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Phylum", top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Phylum",
-                      sample.sort = "Description",
+                      sample.sort = column,
                       x.label = "Samples") +
   labs(x = "Samples", y = "Relative abundance (%)",
        title = "Relative abundance data") +
@@ -65,7 +66,7 @@ print(p)
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Class", top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Class",
-                      sample.sort = "Description",
+                      sample.sort = column,
                       x.label = "Samples") +
   labs(x = "Samples", y = "Relative abundance (%)",
        title = "Relative abundance data") +
@@ -77,7 +78,7 @@ print(p)
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Order", top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Order",
-                      sample.sort = "Description",
+                      sample.sort = column,
                       x.label = "Samples") +
   labs(x = "Samples", y = "Relative abundance (%)",
        title = "Relative abundance data") +
@@ -89,7 +90,7 @@ print(p)
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Family", top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Family",
-                      sample.sort = "Description",
+                      sample.sort = column,
                       x.label = "Samples") +
   labs(x = "Samples", y = "Relative abundance (%)",
        title = "Relative abundance data") +
@@ -102,7 +103,7 @@ print(p)
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Genus", top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Genus",
-                      sample.sort = "Description",
+                      sample.sort = column,
                       x.label = "Samples") +
   labs(x = "Samples", y = "Relative abundance (%)",
        title = "Relative abundance data") +
@@ -114,7 +115,7 @@ print(p)
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Species", top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Species",
-                      sample.sort = "Description",
+                      sample.sort = column,
                       x.label = "Samples") +
   labs(x = "Samples", y = "Relative abundance (%)",
        title = "Relative abundance data") +
