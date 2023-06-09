@@ -49,6 +49,7 @@ p <- plot_composition(pseq2.top,
 theme(legend.position="bottom", legend.title = element_text(size=4),
 legend.text = element_text(size=4)) + guides(fill = guide_legend(ncol = 12, keyheight=0.5, keywidth=0.5))
 print(p)
+write.csv(p$data, paste(outputfile,"kingdom","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Phylum", top = 10)
@@ -61,6 +62,7 @@ p <- plot_composition(pseq2.top,
 theme(legend.position="bottom", legend.title = element_text(size=4),
 legend.text = element_text(size=4)) + guides(fill = guide_legend(ncol = 12, keyheight=0.5, keywidth=0.5))
 print(p)
+write.csv(p$data, paste(outputfile,"phylum","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Class", top = 10)
@@ -73,6 +75,7 @@ p <- plot_composition(pseq2.top,
 theme(legend.position="bottom", legend.title = element_text(size=4),
 legend.text = element_text(size=4)) + guides(fill = guide_legend(ncol = 12, keyheight=0.5, keywidth=0.5))
 print(p)
+write.csv(p$data, paste(outputfile,"class","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Order", top = 10)
@@ -85,6 +88,7 @@ p <- plot_composition(pseq2.top,
 theme(legend.position="bottom", legend.title = element_text(size=4),
 legend.text = element_text(size=4)) + guides(fill = guide_legend(ncol = 12, keyheight=0.5, keywidth=0.5))
 print(p)
+write.csv(p$data, paste(outputfile,"order","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Family", top = 10)
@@ -97,6 +101,7 @@ p <- plot_composition(pseq2.top,
 theme(legend.position="bottom", legend.title = element_text(size=4),
 legend.text = element_text(size=4)) + guides(fill = guide_legend(ncol = 12, keyheight=0.5, keywidth=0.5))
 print(p)
+write.csv(p$data, paste(outputfile,"family","csv",sep="."))
 #############################################################################################################
 
 #############################################################################################################
@@ -110,6 +115,7 @@ p <- plot_composition(pseq2.top,
 theme(legend.position="bottom", legend.title = element_text(size=4),
 legend.text = element_text(size=4)) + guides(fill = guide_legend(ncol = 12, keyheight=0.5, keywidth=0.5))
 print(p)
+write.csv(p$data, paste(outputfile,"genus","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
 pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Species", top = 10)
@@ -123,6 +129,6 @@ theme(legend.position="bottom", legend.title = element_text(size=4),
 legend.text = element_text(size=4)) + guides(fill = guide_legend(ncol = 12, keyheight=0.5, keywidth=0.5))
 print(p)
 #############################################################################################################
-write.csv(p$data, paste(outputfile,"csv",sep="."))
+write.csv(p$data, paste(outputfile,"species","csv",sep="."))
 dev.off()
 }
