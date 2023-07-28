@@ -39,7 +39,7 @@ run <- function() {
 output <- function(outputfile) {
 	 pdf(paste(outputfile,"pdf",sep="."))#
 #############################################################################################################
-pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Kingdom", top = 10)
+pseq2.top <- microbiome::aggregate_taxa(pseq2, level="Kingdom")#, top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Kingdom",
                       sample.sort = column,
@@ -52,7 +52,7 @@ print(p)
 write.csv(p$data, paste(outputfile,"kingdom","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
-pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Phylum", top = 10)
+pseq2.top <- microbiome::aggregate_taxa(pseq2, level="Phylum")#, top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Phylum",
                       sample.sort = column,
@@ -65,7 +65,7 @@ print(p)
 write.csv(p$data, paste(outputfile,"phylum","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
-pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Class", top = 10)
+pseq2.top <- microbiome::aggregate_taxa(pseq2, level="Class")#, top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Class",
                       sample.sort = column,
@@ -78,7 +78,7 @@ print(p)
 write.csv(p$data, paste(outputfile,"class","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
-pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Order", top = 10)
+pseq2.top <- microbiome::aggregate_taxa(pseq2, level="Order")#, top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Order",
                       sample.sort = column,
@@ -91,7 +91,7 @@ print(p)
 write.csv(p$data, paste(outputfile,"order","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
-pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Family", top = 10)
+pseq2.top <- microbiome::aggregate_taxa(pseq2, level="Family")#, top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Family",
                       sample.sort = column,
@@ -105,7 +105,7 @@ write.csv(p$data, paste(outputfile,"family","csv",sep="."))
 #############################################################################################################
 
 #############################################################################################################
-pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Genus", top = 10)
+pseq2.top <- microbiome::aggregate_taxa(pseq2, level="Genus")#, top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Genus",
                       sample.sort = column,
@@ -118,7 +118,7 @@ print(p)
 write.csv(p$data, paste(outputfile,"genus","csv",sep="."))
 #############################################################################################################
 #############################################################################################################
-pseq2.top <- microbiome::aggregate_top_taxa(pseq2, "Species", top = 10)
+pseq2.top <- microbiome::aggregate_taxa(pseq2, level="Species")#, top = 10)
 p <- plot_composition(pseq2.top,
                       taxonomic.level = "Species",
                       sample.sort = column,
